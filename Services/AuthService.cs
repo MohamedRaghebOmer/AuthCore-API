@@ -10,7 +10,7 @@ using System.Text;
 
 namespace AuthCore_API.Services
 {
-    public class AuthService
+    public static class AuthService
     {
         public static LoginResponseDto? Login(LoginRequestDto loginRequest)
         {
@@ -117,10 +117,8 @@ namespace AuthCore_API.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Name, user.Username.Trim()),
-                new Claim(ClaimTypes.Email, user.Email.Trim()),
-                new Claim(ClaimTypes.Role, user.Role.Trim())
+                new (ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                new (ClaimTypes.Name, user.Username.Trim()),
             };
 
             var token = new JwtSecurityToken(
