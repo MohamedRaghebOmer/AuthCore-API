@@ -1,3 +1,4 @@
+using AuthCore_API.Configurations;
 
 namespace AuthCore_API
 {
@@ -8,19 +9,19 @@ namespace AuthCore_API
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllers();
-
-            // Enable Swagger
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerConfigurations();
+            builder.Services.AddAuthConfiguration();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                // Run Swagger UI
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthCore-API v1");
+                });
             }
 
             app.UseHttpsRedirection();
