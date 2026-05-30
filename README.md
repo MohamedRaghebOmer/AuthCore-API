@@ -1,6 +1,6 @@
 # 🚀 AuthCore API
 
-AuthCore API is a minimal, focused RESTful authentication service built on ASP.NET Core (.NET 10). It demonstrates practical API design with JWT access tokens, refresh tokens, and secure logout behavior. This project is intended for hands-on practice and to showcase understanding of REST principles (resources, statelessness, proper status codes, and clear request/response contracts).
+AuthCore API is a minimal, focused RESTful authentication service built on ASP.NET Core (.NET 10). It demonstrates practical API design with JWT access tokens, refresh tokens, and secure logout behavior. This project is intended for hands-on practice and to showcase understanding of REST principles (resources, statelessness, proper status codes, and clear request/response contracts). 
 
 ## ✅ Key Features
 
